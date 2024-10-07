@@ -2,7 +2,7 @@
 
 ## Description
 
-This project implements a RESTful API using Python with Flask. The system applies Dijkstra's algorithm to calculate the shortest path between an initial geographic coordinate and a list of other coordinates, based on their latitude and altitude.
+This project implements a RESTful API using Python with **FastAPI**. The system applies Dijkstra's algorithm to calculate the shortest path between an initial geographic coordinate and a list of other coordinates, based on their latitude and altitude.
 
 The input is provided via a POST request in JSON format, containing the initial coordinates and a list of additional coordinates as pairs of latitude and altitude values. The output will be a sorted list of coordinates, with the starting point as the first element, ordered by the shortest path according to Dijkstra's algorithm.
 
@@ -11,7 +11,7 @@ The system is designed to handle around 100 simultaneous requests, with a maximu
 ## Technologies
 
 - Python 3.x
-- Flask
+- FastAPI
 - Dijkstra's Algorithm
 
 ## API Endpoints
@@ -47,9 +47,8 @@ The system is designed to handle around 100 simultaneous requests, with a maximu
   ```
 
 ## Notes
-
 - The system is designed to handle up to 100 simultaneous requests, with a maximum of 10 coordinates per request.
-- This project is not optimized for very high loads, but it can be expanded if needed.
+- This project is not optimized for very high loads, but can be expanded if needed.
 
 ---
 
@@ -57,7 +56,7 @@ The system is designed to handle around 100 simultaneous requests, with a maximu
 
 ## Descripción
 
-Este proyecto implementa una API RESTful usando Python con Flask. El sistema utiliza el algoritmo de Dijkstra para calcular la ruta más corta entre un punto inicial y una lista de otras coordenadas geográficas, basadas en su latitud y altitud.
+Este proyecto implementa una API RESTful usando Python con **FastAPI**. El sistema utiliza el algoritmo de Dijkstra para calcular la ruta más corta entre un punto inicial y una lista de otras coordenadas geográficas, basadas en su latitud y altitud.
 
 La entrada se proporciona a través de una solicitud POST en formato JSON que contiene las coordenadas iniciales y una lista de coordenadas adicionales como pares de valores de latitud y altitud. La salida será una lista ordenada de coordenadas, con el punto inicial como el primer elemento, ordenadas según el camino más corto calculado con el algoritmo de Dijkstra.
 
@@ -66,7 +65,7 @@ El sistema está diseñado para manejar alrededor de 100 solicitudes simultánea
 ## Tecnologías
 
 - Python 3.x
-- Flask
+- FastAPI
 - Algoritmo de Dijkstra
 
 ## Endpoints de la API
