@@ -9,7 +9,7 @@ dijkstra = APIRouter()
 @dijkstra.post('/path', status_code=200)
 async def calculate_shortest_path(route: Ruta):
     initial = route.initial
-    coordinates = route.coordinatesv
+    coordinates = route.coordinates
     final = route.final
     
     # create weights and adjacency list

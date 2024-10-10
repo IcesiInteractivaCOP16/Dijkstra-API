@@ -1,112 +1,459 @@
-# Test Plan: Dijkstra's Shortest Path Algorithm
 
-**Project Name:** Pathfinding with Dijkstra's Algorithm  
-**Prepared By:** ICESI Interactiva Backend Team
-**Date:** 10/10/2024
+# Test Plan for Dijkstra's Algorithm (English)
 
----
+This document outlines the tests to validate the implementation of Dijkstra's algorithm in finding the shortest path between geographic coordinates. Inputs are provided in JSON format for ease of reading and efficiency when testing with Postman. Additionally, unit tests, found in the file `test_dijkstra.py`, clearly implement this plan by calling the necessary functions and creating the required objects.
 
-## 1. Objective
+## **Test 1:**
 
-The objective of this test plan is to validate the functionality of the Dijkstra-based shortest path algorithm implemented in Python. The algorithm calculates the shortest path between a set of coordinates. We will ensure the correctness of the results by testing various scenarios, including normal cases, edge cases, and invalid conditions.
+### **Input:**
 
----
+```json
+{
+    "initial": {
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "adjacents": [
+            {
+                "latitude": 34.0522,
+                "longitude": -118.2437
+            },
+            {
+                "latitude": 41.8781,
+                "longitude": -87.6298
+            }
+        ]
+    },
+    "coordinates": [
+        {
+            "latitude": 34.0522,
+            "longitude": -118.2437,
+            "adjacents": [
+                {
+                    "latitude": 40.7128,
+                    "longitude": -74.0060
+                },
+                {
+                    "latitude": 37.7749,
+                    "longitude": -122.4194
+                }
+            ]
+        },
+        {
+            "latitude": 41.8781,
+            "longitude": -87.6298,
+            "adjacents": [
+                {
+                    "latitude": 40.7128,
+                    "longitude": -74.0060
+                },
+                {
+                    "latitude": 37.7749,
+                    "longitude": -122.4194
+                }
+            ]
+        }
+    ],
+    "final": {
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "adjacents": [
+            {
+                "latitude": 34.0522,
+                "longitude": -118.2437
+            },
+            {
+                "latitude": 41.8781,
+                "longitude": -87.6298
+            }
+        ]
+    }
+}
+```
 
-## 2. Scope
+### **Expected Output:**
 
-The tests will focus on the following functionalities:
+```json
+{
+    "shortest_path": [
+        [40.7128, -74.006],
+        [41.8781, -87.6298],
+        [37.7749, -122.4194]
+    ]
+}
+```
 
-- Shortest path calculation between coordinates.
-- Proper handling of disconnected graphs.
-- Handling of graphs with adyacent coordinates.
-- Performance with large distances.
-- Handling identical initial and final coordinates.
-
----
-
-## 3. Test Cases
-
-### Test Case 1: Simple Shortest Path
-
-**Description:**  
-Test the calculation of the shortest path with a basic route where no adjacent coordinates are defined.  
-
-**Input:**  
-- Initial Coordinate: `(40.7128, -74.0060)`  
-- Final Coordinate: `(48.8566, 2.3522)`  
-- Intermediate Coordinates:  
-  - `(34.0522, -118.2437)`  
-  - `(41.8781, -87.6298)`  
-
-**Expected Result:**  
-A valid shortest path should be returned as a list of coordinates.
-
----
-
-### Test Case 2: Route with Adjacent Coordinates
-
-**Description:**  
-Test a route where each coordinate has defined adjacent nodes. Ensure the algorithm handles adjacency correctly.  
-
-**Input:**  
-- Initial Coordinate: `(40.7128, -74.0060)`  
-- Final Coordinate: `(48.8566, 2.3522)`  
-- Intermediate Coordinates with Adjacents:  
-  - `(34.0522, -118.2437)` (adjacent to final)  
-  - `(41.8781, -87.6298)` (adjacent to final)  
-
-**Expected Result:**  
-The shortest path should include the correct adjacent nodes and both the initial and final points.
-
----
-
-### Test Case 3: Non-Connected Graph
-
-**Description:**  
-Test a case where the graph is disconnected, meaning there is no path between the initial and final coordinates.  
-
-**Input:**  
-- Initial Coordinate: `(40.7128, -74.0060)`  
-- Final Coordinate: `(48.8566, 2.3522)`  
-- Intermediate Coordinate:  
-  - `(34.0522, -118.2437)` (no adjacencies)  
-
-**Expected Result:**  
-The algorithm should return `None` as there is no path between the initial and final coordinates.
-
----
-
-### Test Case 4: Identical Initial and Final Coordinates
-
-**Description:**  
-Test the scenario where the initial and final coordinates are the same. This tests if the algorithm handles such cases correctly without unnecessary calculations.  
-
-**Input:**  
-- Initial and Final Coordinate: `(40.7128, -74.0060)`  
-
-**Expected Result:**  
-The returned path should contain only the single point `(40.7128, -74.0060)`.
+### **Description:**
+This test includes an initial node in New York, a final node in San Francisco, and three adjacent cities. The Dijkstra implementation should select the shortest path that passes through Chicago before reaching San Francisco.
 
 ---
 
-### Test Case 5: Large Distances
+## **Test 2:**
 
-**Description:**  
-Test the algorithm's ability to handle large distances between coordinates (e.g., New York to Paris). Ensure the path is correctly calculated and no errors occur due to the large geographic area.  
+### **Input:**
 
-**Input:**  
-- Initial Coordinate: `(40.7128, -74.0060)`  
-- Final Coordinate: `(48.8566, 2.3522)`  
+```json
+{
+    "initial": {
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "adjacents": [
+            {
+                "latitude": 34.0522,
+                "longitude": -118.2437
+            }
+        ]
+    },
+    "coordinates": [
+        {
+            "latitude": 34.0522,
+            "longitude": -118.2437,
+            "adjacents": [
+                {
+                    "latitude": 40.7128,
+                    "longitude": -74.0060
+                }
+            ]
+        }
+    ],
+    "final": {
+        "latitude": 34.0522,
+        "longitude": -118.2437,
+        "adjacents": [
+            {
+                "latitude": 40.7128,
+                "longitude": -74.0060
+            }
+        ]
+    }
+}
+```
 
-**Expected Result:**  
-The shortest path should include the initial and final points without errors.
+### **Expected Output:**
+
+```json
+{
+    "shortest_path": [
+        [40.7128, -74.006],
+        [34.0522, -118.2437]
+    ]
+}
+```
+
+### **Description:**
+In this case, there are only two nodes: the initial in New York and the final in Los Angeles. The shortest route is direct, with no intermediate nodes.
 
 ---
 
-## 4. Assumptions
+## **Test 3:**
 
-- The coordinates are well-formed with valid latitude and longitude values.
-- The geodesic distance calculation uses the `geopy` library to compute real-world distances.
-- The system should not crash or produce invalid results for any input scenarios.
+### **Input:**
+
+```json
+{
+    "initial": {
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "adjacents": [
+            {
+                "latitude": 41.8781,
+                "longitude": -87.6298
+            }
+        ]
+    },
+    "coordinates": [
+        {
+            "latitude": 41.8781,
+            "longitude": -87.6298,
+            "adjacents": [
+                {
+                    "latitude": 40.7128,
+                    "longitude": -74.0060
+                },
+                {
+                    "latitude": 34.0522,
+                    "longitude": -118.2437
+                },
+                {
+                    "latitude": 37.7749,
+                    "longitude": -122.4194
+                }
+            ]
+        },
+        {
+            "latitude": 34.0522,
+            "longitude": -118.2437,
+            "adjacents": [
+                {
+                    "latitude": 41.8781,
+                    "longitude": -87.6298
+                },
+                {
+                    "latitude": 37.7749,
+                    "longitude": -122.4194
+                }
+            ]
+        }
+    ],
+    "final": {
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "adjacents": [
+            {
+                "latitude": 41.8781,
+                "longitude": -87.6298
+            },
+            {
+                "latitude": 34.0522,
+                "longitude": -118.2437
+            }
+        ]
+    }
+}
+```
+
+### **Expected Output:**
+
+```json
+{
+    "shortest_path": [
+        [40.7128, -74.006],
+        [41.8781, -87.6298],
+        [37.7749, -122.4194]
+    ]
+}
+```
+
+### **Description:**
+Here, a path is tested where Chicago is between New York and San Francisco, and the algorithm should choose the optimal path that passes through Chicago before reaching the final destination.
+
+
+---
+
+# Plan de Pruebas para el Algoritmo de Dijkstra (Español)
+
+Este documento detalla las pruebas para validar la implementación del algoritmo de Dijkstra en la búsqueda del camino más corto entre coordenadas geográficas. Los inputs están dados en formato JSON con el fin de facilidad en su lectura y eficiencia a la hora de probar con Postman. Por otro lado, las pruebas unitarias, que se encuentran en el archivo `test_dijkstra.py`, claramente implementan este plan llamando a las funciones y creando los objetos necesarios. 
+
+## **Test 1:**
+
+### **Input:**
+
+```json
+{
+    "initial": {
+        "latitud": 40.7128,
+        "longitud": -74.0060,
+        "adyacentes": [
+            {
+                "latitud": 34.0522,
+                "longitud": -118.2437
+            },
+            {
+                "latitud": 41.8781,
+                "longitud": -87.6298
+            }
+        ]
+    },
+    "coordinates": [
+        {
+            "latitud": 34.0522,
+            "longitud": -118.2437,
+            "adyacentes": [
+                {
+                    "latitud": 40.7128,
+                    "longitud": -74.0060
+                },
+                {
+                    "latitud": 37.7749,
+                    "longitud": -122.4194
+                }
+            ]
+        },
+        {
+            "latitud": 41.8781,
+            "longitud": -87.6298,
+            "adyacentes": [
+                {
+                    "latitud": 40.7128,
+                    "longitud": -74.0060
+                },
+                {
+                    "latitud": 37.7749,
+                    "longitud": -122.4194
+                }
+            ]
+        }
+    ],
+    "final": {
+        "latitud": 37.7749,
+        "longitud": -122.4194,
+        "adyacentes": [
+            {
+                "latitud": 34.0522,
+                "longitud": -118.2437
+            },
+            {
+                "latitud": 41.8781,
+                "longitud": -87.6298
+            }
+        ]
+    }
+}
+```
+
+### **Expected Output:**
+
+```json
+{
+    "shortest_path": [
+        [40.7128, -74.006],
+        [41.8781, -87.6298],
+        [37.7749, -122.4194]
+    ]
+}
+```
+
+### **Descripción:**
+Esta prueba incluye un nodo inicial en Nueva York, un nodo final en San Francisco, y tres ciudades adyacentes. La implementación de Dijkstra debe seleccionar el camino más corto que pasa por Chicago antes de llegar a San Francisco.
+
+---
+
+## **Test 2:**
+
+### **Input:**
+
+```json
+{
+    "initial": {
+        "latitud": 40.7128,
+        "longitud": -74.0060,
+        "adyacentes": [
+            {
+                "latitud": 34.0522,
+                "longitud": -118.2437
+            }
+        ]
+    },
+    "coordinates": [
+        {
+            "latitud": 34.0522,
+            "longitud": -118.2437,
+            "adyacentes": [
+                {
+                    "latitud": 40.7128,
+                    "longitud": -74.0060
+                }
+            ]
+        }
+    ],
+    "final": {
+        "latitud": 34.0522,
+        "longitud": -118.2437,
+        "adyacentes": [
+            {
+                "latitud": 40.7128,
+                "longitud": -74.0060
+            }
+        ]
+    }
+}
+```
+
+### **Expected Output:**
+
+```json
+{
+    "shortest_path": [
+        [40.7128, -74.006],
+        [34.0522, -118.2437]
+    ]
+}
+```
+
+### **Descripción:**
+En este caso, solo existen dos nodos: el inicial en Nueva York y el final en Los Ángeles. La ruta más corta es directa, sin nodos intermedios.
+
+---
+
+## **Test 3:**
+
+### **Input:**
+
+```json
+{
+    "initial": {
+        "latitud": 40.7128,
+        "longitud": -74.0060,
+        "adyacentes": [
+            {
+                "latitud": 41.8781,
+                "longitud": -87.6298
+            }
+        ]
+    },
+    "coordinates": [
+        {
+            "latitud": 41.8781,
+            "longitud": -87.6298,
+            "adyacentes": [
+                {
+                    "latitud": 40.7128,
+                    "longitud": -74.0060
+                },
+                {
+                    "latitud": 34.0522,
+                    "longitud": -118.2437
+                },
+                {
+                    "latitud": 37.7749,
+                    "longitud": -122.4194
+                }
+            ]
+        },
+        {
+            "latitud": 34.0522,
+            "longitud": -118.2437,
+            "adyacentes": [
+                {
+                    "latitud": 41.8781,
+                    "longitud": -87.6298
+                },
+                {
+                    "latitud": 37.7749,
+                    "longitud": -122.4194
+                }
+            ]
+        }
+    ],
+    "final": {
+        "latitud": 37.7749,
+        "longitud": -122.4194,
+        "adyacentes": [
+            {
+                "latitud": 41.8781,
+                "longitud": -87.6298
+            },
+            {
+                "latitud": 34.0522,
+                "longitud": -118.2437
+            }
+        ]
+    }
+}
+```
+
+### **Expected Output:**
+
+```json
+{
+    "shortest_path": [
+        [40.7128, -74.006],
+        [41.8781, -87.6298],
+        [37.7749, -122.4194]
+    ]
+}
+```
+
+### **Descripción:**
+Aquí se prueba un camino donde Chicago está entre Nueva York y San Francisco, y el algoritmo debe elegir el camino óptimo que pasa por Chicago antes de llegar al destino final.
 
 ---
