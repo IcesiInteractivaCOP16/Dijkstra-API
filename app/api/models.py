@@ -46,7 +46,7 @@ class Coordenada(BaseModel):
 class Ruta(BaseModel):
     initial: Coordenada
     coordinates: List[Coordenada]
-    final = Coordenada
+    final: Coordenada
     
     class Config:
         schema_extra = {
