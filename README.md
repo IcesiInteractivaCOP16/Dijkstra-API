@@ -27,11 +27,38 @@ The system is designed to handle around 100 simultaneous requests, with a maximu
   Example of request body:
   ```json
   {
-    "initial": [40.7128, -74.0060],
+    "initial": {
+        "latitud": 40.7128,
+        "longitud": -74.0060,
+        "adyacentes": [
+            {
+                "latitud": 34.0522,
+                "longitud": -118.2437
+            }
+        ]
+    },
     "coordinates": [
-      [34.0522, -118.2437],
-      [51.5074, -0.1278]
-    ]
+        {
+            "latitud": 34.0522,
+            "longitud": -118.2437,
+            "adyacentes": [
+                {
+                    "latitud": 40.7128,
+                    "longitud": -74.0060
+                }
+            ]
+        }
+    ],
+    "final": {
+        "latitud": 34.0522,
+        "longitud": -118.2437,
+        "adyacentes": [
+            {
+                "latitud": 40.7128,
+                "longitud": -74.0060
+            }
+        ]
+    }
   }
   ```
 
@@ -39,12 +66,20 @@ The system is designed to handle around 100 simultaneous requests, with a maximu
 
   Example of response body:
   ```json
-  [
-    [40.7128, -74.0060],
-    [51.5074, -0.1278],
-    [34.0522, -118.2437]
-  ]
+  {
+    "shortest_path": [
+        [40.7128, -74.006],
+        [34.0522, -118.2437]
+    ]
+  }
   ```
+
+## Run API
+Navigate to `./Dijkstra-API` and execute the `python -m uvicorn app.main:app --reload` command.
+
+## Run Tests
+- To run the unit tests just execute the `python -m pytest` command.
+- To run the Postman requests import the JSON file into the Postman application.
 
 ## Notes
 - The system is designed to handle up to 100 simultaneous requests, with a maximum of 10 coordinates per request.
@@ -81,11 +116,38 @@ El sistema está diseñado para manejar alrededor de 100 solicitudes simultánea
   Ejemplo de cuerpo de la solicitud:
   ```json
   {
-    "initial": [40.7128, -74.0060],
+    "initial": {
+        "latitud": 40.7128,
+        "longitud": -74.0060,
+        "adyacentes": [
+            {
+                "latitud": 34.0522,
+                "longitud": -118.2437
+            }
+        ]
+    },
     "coordinates": [
-      [34.0522, -118.2437],
-      [51.5074, -0.1278]
-    ]
+        {
+            "latitud": 34.0522,
+            "longitud": -118.2437,
+            "adyacentes": [
+                {
+                    "latitud": 40.7128,
+                    "longitud": -74.0060
+                }
+            ]
+        }
+    ],
+    "final": {
+        "latitud": 34.0522,
+        "longitud": -118.2437,
+        "adyacentes": [
+            {
+                "latitud": 40.7128,
+                "longitud": -74.0060
+            }
+        ]
+    }
   }
   ```
 
@@ -93,12 +155,20 @@ El sistema está diseñado para manejar alrededor de 100 solicitudes simultánea
 
   Ejemplo de cuerpo de la respuesta:
   ```json
-  [
-    [40.7128, -74.0060],
-    [51.5074, -0.1278],
-    [34.0522, -118.2437]
-  ]
+  {
+    "shortest_path": [
+        [40.7128, -74.006],
+        [34.0522, -118.2437]
+    ]
+  }
   ```
+
+## Correr API
+Navega a `./Dijkstra-API` y ejecuta el comando `python -m uvicorn app.main:app --reload`.
+
+## Correr Tests
+- Para correr las pruebas unitarios solo ejecuta el comando `python -m pytest`.
+- Para correr las solicitudes de Postman importa el archivo JSON a la app de Postman.
 
 ## Notas
 
