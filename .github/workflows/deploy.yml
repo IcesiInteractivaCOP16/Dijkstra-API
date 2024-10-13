@@ -36,7 +36,7 @@ jobs:
         ssh -i $PEM_FILE $EC2_USER@$EC2_HOST "mkdir -p /home/$EC2_USER/app"
         
         # Copy application files to EC2
-        scp -i $PEM_FILE -r ./ $EC2_USER@$EC2_HOST:/home/$EC2_USER/app/
+        scp -i $PEM_FILE -r ./* $EC2_USER@$EC2_HOST:/home/$EC2_USER/app/
 
     - name: Run Docker install script and deploy application
       run: |
