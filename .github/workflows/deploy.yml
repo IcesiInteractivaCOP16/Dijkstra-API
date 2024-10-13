@@ -48,7 +48,7 @@ jobs:
         # Run the Docker installation script and deploy the application
         ssh -i $PEM_FILE $EC2_USER@$EC2_HOST << 'EOF'
           # Navigate to the app directory
-          cd /home/$EC2_USER/app/
+          cd /home/${{ secrets.EC2_USER }}/app/
           
           # Give execute permission to the script and run it
           chmod +x install_docker.sh
