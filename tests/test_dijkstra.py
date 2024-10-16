@@ -16,7 +16,6 @@ def test_dijkstra_short_path():
     expected_path = ["Universidad ICESI", "Universidad del Valle"]
     assert data["path"] == expected_path, "El camino más corto no coincide con el esperado."
 
-
 def test_dijkstra_medium_path():
     path_request = PathRequest(source="Bulevar del Río", destination="Universidad ECCI")
     

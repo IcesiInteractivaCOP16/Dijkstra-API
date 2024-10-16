@@ -12,5 +12,4 @@ ENV/
 
 # Docker files
 docker-compose.yml
-Dockerfile
 .dockerignore
