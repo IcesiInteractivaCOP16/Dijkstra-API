@@ -6,12 +6,10 @@ from app.api.models import PathRequest
 # cliente para pruebas
 client = TestClient(dijkstra)
 
-#@pytest.mark.asyncio
 def test_dijkstra_short_path():
     path_request = PathRequest(source="Universidad ICESI", destination="Universidad del Valle")
     
-    # response = await client.post('/path', json=path_request.dict())
-    response = client.post('/path', json=path_request.dict())
+    response = client.post('/path', json=path_request.model_dump())
     assert response.status_code == 200, "No se pudo calcular la ruta."
     
     data = response.json()
@@ -19,11 +17,10 @@ def test_dijkstra_short_path():
     assert data["path"] == expected_path, "El camino más corto no coincide con el esperado."
 
 
-#@pytest.mark.asyncio
 def test_dijkstra_medium_path():
     path_request = PathRequest(source="Bulevar del Río", destination="Universidad ECCI")
     
-    response = client.post('/path', json=path_request.dict())
+    response = client.post('/path', json=path_request.model_dump())
     assert response.status_code == 200, "No se pudo calcular la ruta."
     
     data = response.json()
@@ -31,11 +28,10 @@ def test_dijkstra_medium_path():
     assert data["path"] == expected_path, "El camino más corto no coincide con el esperado."
 
 
-#@pytest.mark.asyncio
-def test_dijkstra_no_path():
+def test_dijkstra_large_path():
     path_request = PathRequest(source="Bulevar del Río", destination="Universidad ICESI")
     
-    response = client.post('/path', json=path_request.dict())
+    response = client.post('/path', json=path_request.model_dump())
     expected_path = [
         "Bulevar del Río",
         "Banco de Bogotá",
@@ -51,3 +47,13 @@ def test_dijkstra_no_path():
     data = response.json()
     assert data["path"] == expected_path, "El camino más corto no coincide con el esperado."
 
+def test_dijkstra_no_path():
+    path_request = PathRequest(source="No Source", destination="Universidad ICESI")
+
+    try:
+        response = client.post('/path', json=path_request.model_dump())
+    except Exception as e:
+        assert e.status_code == 404
+        assert e.detail == "Source or destination not found in the graph"
+
+    
