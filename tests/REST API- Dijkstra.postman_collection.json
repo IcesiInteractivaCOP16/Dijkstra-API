@@ -9,7 +9,7 @@
 	},
 	"item": [
 		{
-			"name": "Dijkstra Path 0",
+			"name": "Dijkstra Path No Path",
 			"event": [
 				{
 					"listen": "test",
@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"initial\": {\n    \"latitud\": 40.7128,\n    \"longitud\": -74.0060,\n    \"adyacentes\": [\n      {\n        \"latitud\": 34.0522,\n        \"longitud\": -118.2437,\n        \"adyacentes\": [\n          {\n            \"latitud\": 40.7128,\n            \"longitud\": -74.0060,\n            \"adyacentes\": []\n          },\n          {\n            \"latitud\": 41.8781,\n            \"longitud\": -87.6298,\n            \"adyacentes\": []\n          }\n        ]\n      },\n      {\n        \"latitud\": 41.8781,\n        \"longitud\": -87.6298,\n        \"adyacentes\": [\n          {\n            \"latitud\": 34.0522,\n            \"longitud\": -118.2437,\n            \"adyacentes\": []\n          },\n          {\n            \"latitud\": 37.7749,\n            \"longitud\": -122.4194,\n            \"adyacentes\": []\n          }\n        ]\n      }\n    ]\n  },\n  \"coordinates\": [\n    {\n      \"latitud\": 34.0522,\n      \"longitud\": -118.2437,\n      \"adyacentes\": [\n        {\n          \"latitud\": 40.7128,\n          \"longitud\": -74.0060,\n          \"adyacentes\": []\n        },\n        {\n          \"latitud\": 41.8781,\n          \"longitud\": -87.6298,\n          \"adyacentes\": []\n        }\n      ]\n    },\n    {\n      \"latitud\": 41.8781,\n      \"longitud\": -87.6298,\n      \"adyacentes\": [\n        {\n          \"latitud\": 34.0522,\n          \"longitud\": -118.2437,\n          \"adyacentes\": []\n        },\n        {\n          \"latitud\": 37.7749,\n          \"longitud\": -122.4194,\n          \"adyacentes\": []\n        }\n      ]\n    }\n  ],\n  \"final\": {\n    \"latitud\": 37.7749,\n    \"longitud\": -122.4194,\n    \"adyacentes\": [\n      {\n        \"latitud\": 41.8781,\n        \"longitud\": -87.6298,\n        \"adyacentes\": []\n      }\n    ]\n  }\n}\n",
+					"raw": "{\n    \"source\": \"No Source\",\n    \"destination\": \"Universidad ICESI\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -65,7 +65,7 @@
 			"response": []
 		},
 		{
-			"name": "Dijkstra Path 1",
+			"name": "Dijkstra Path Short Path",
 			"event": [
 				{
 					"listen": "test",
@@ -96,7 +96,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"initial\": {\n        \"latitud\": 40.7128,\n        \"longitud\": -74.0060,\n        \"adyacentes\": [\n            {\n                \"latitud\": 34.0522,\n                \"longitud\": -118.2437\n            },\n            {\n                \"latitud\": 41.8781,\n                \"longitud\": -87.6298\n            }\n        ]\n    },\n    \"coordinates\": [\n        {\n            \"latitud\": 34.0522,\n            \"longitud\": -118.2437,\n            \"adyacentes\": [\n                {\n                    \"latitud\": 40.7128,\n                    \"longitud\": -74.0060\n                },\n                {\n                    \"latitud\": 37.7749,\n                    \"longitud\": -122.4194\n                }\n            ]\n        },\n        {\n            \"latitud\": 41.8781,\n            \"longitud\": -87.6298,\n            \"adyacentes\": [\n                {\n                    \"latitud\": 40.7128,\n                    \"longitud\": -74.0060\n                },\n                {\n                    \"latitud\": 37.7749,\n                    \"longitud\": -122.4194\n                }\n            ]\n        }\n    ],\n    \"final\": {\n        \"latitud\": 37.7749,\n        \"longitud\": -122.4194,\n        \"adyacentes\": [\n            {\n                \"latitud\": 34.0522,\n                \"longitud\": -118.2437\n            },\n            {\n                \"latitud\": 41.8781,\n                \"longitud\": -87.6298\n            }\n        ]\n    }\n}\n",
+					"raw": "{\n    \"source\": \"Universidad ICESI\",\n    \"destination\": \"Universidad del Valle\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,7 +121,7 @@
 			"response": []
 		},
 		{
-			"name": "Dijkstra Path 2 Short",
+			"name": "Dijkstra Path Medium Path",
 			"event": [
 				{
 					"listen": "test",
@@ -152,7 +152,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"initial\": {\n        \"latitud\": 40.7128,\n        \"longitud\": -74.0060,\n        \"adyacentes\": [\n            {\n                \"latitud\": 34.0522,\n                \"longitud\": -118.2437\n            }\n        ]\n    },\n    \"coordinates\": [\n        {\n            \"latitud\": 34.0522,\n            \"longitud\": -118.2437,\n            \"adyacentes\": [\n                {\n                    \"latitud\": 40.7128,\n                    \"longitud\": -74.0060\n                }\n            ]\n        }\n    ],\n    \"final\": {\n        \"latitud\": 34.0522,\n        \"longitud\": -118.2437,\n        \"adyacentes\": [\n            {\n                \"latitud\": 40.7128,\n                \"longitud\": -74.0060\n            }\n        ]\n    }\n}\n",
+					"raw": "{\n    \"source\": \"Bulevar del Río\",\n    \"destination\": \"Universidad ECCI\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -177,7 +177,7 @@
 			"response": []
 		},
 		{
-			"name": "Dijkstra Path 3 Long",
+			"name": "Dijkstra Long Path",
 			"event": [
 				{
 					"listen": "test",
@@ -208,7 +208,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"initial\": {\n        \"latitud\": 40.7128,\n        \"longitud\": -74.0060,\n        \"adyacentes\": [\n            {\n                \"latitud\": 41.8781,\n                \"longitud\": -87.6298\n            }\n        ]\n    },\n    \"coordinates\": [\n        {\n            \"latitud\": 41.8781,\n            \"longitud\": -87.6298,\n            \"adyacentes\": [\n                {\n                    \"latitud\": 40.7128,\n                    \"longitud\": -74.0060\n                },\n                {\n                    \"latitud\": 34.0522,\n                    \"longitud\": -118.2437\n                },\n                {\n                    \"latitud\": 37.7749,\n                    \"longitud\": -122.4194\n                }\n            ]\n        },\n        {\n            \"latitud\": 34.0522,\n            \"longitud\": -118.2437,\n            \"adyacentes\": [\n                {\n                    \"latitud\": 41.8781,\n                    \"longitud\": -87.6298\n                },\n                {\n                    \"latitud\": 37.7749,\n                    \"longitud\": -122.4194\n                }\n            ]\n        }\n    ],\n    \"final\": {\n        \"latitud\": 37.7749,\n        \"longitud\": -122.4194,\n        \"adyacentes\": [\n            {\n                \"latitud\": 41.8781,\n                \"longitud\": -87.6298\n            },\n            {\n                \"latitud\": 34.0522,\n                \"longitud\": -118.2437\n            }\n        ]\n    }\n}\n",
+					"raw": "{\n    \"source\": \"Bulevar del Río\",\n    \"destination\": \"Universidad ICESI\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
