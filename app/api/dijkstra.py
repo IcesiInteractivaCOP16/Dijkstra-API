@@ -11,96 +11,80 @@ graph = {
         "latitud": 3.342076976663357,
         "longitud": -76.53063419139824,
         "adyacentes": [
-            "Universidad del Valle"
+            "Universidad del Valle",
+            "Fundación Universitaria San Martín"
         ]
     },
     "Bulevar del Río": {
         "latitud": 3.4528374462960167,
         "longitud": -76.5347951337262,
         "adyacentes": [
-            "Banco de Bogotá",
-            "UNICOC"
+            "Biblioteca del Centenario",
+            "Biblioteca Departamental Jorge Garcés Borrero"
         ]
     },
     "Universidad del Valle": {
         "latitud": 3.376762549737823,
+        "longitud": -76.52159697790536,
+        "adyacentes": [
+            "Universidad ICESI",
+            "Unidad Deportiva Alberto Galindo"
+        ]
+    },
+    "Fundación Universitaria San Martín": {
+        "latitud": 3.418830555134766,
         "longitud": -76.53472029139806,
         "adyacentes": [
             "Universidad ICESI",
-            "Instituto Humboldt"
+            "Universidad del Valle"
         ]
     },
-    "Centro Cultural de Cali": {
-        "latitud": 3.4499164810651934,
-        "longitud": -76.53617706256205,
+    "Biblioteca del Centenario": {
+        "latitud": 3.4509470750225484,
+        "longitud": -76.5436671910903,
         "adyacentes": [
-            "Centro Cultural del Banco de la República",
-            "Biblioteca Departamental Jorge Garcés Borrero"
-        ]
-    },
-    "Cámara de Comercio de Cali": {
-        "latitud": 3.451508290689324,
-        "longitud": -76.53552364435075,
-        "adyacentes": [
-            "Banco de Bogotá",
-            "Centro Cultural del Banco de la República"
-        ]
-    },
-    "Banco de Bogotá": {
-        "latitud": 3.452573287034155,
-        "longitud": -76.53534363128803,
-        "adyacentes": [
-            "Bulevar del Río",
-            "Cámara de Comercio de Cali"
-        ]
-    },
-    "UNICOC": {
-        "latitud": 3.456180458393561,
-        "longitud": -76.53294739536896,
-        "adyacentes": [
-            "Universidad ECCI",
+            "Biblioteca Departamental Jorge Garcés Borrero",
             "Bulevar del Río"
         ]
     },
-    "Universidad ECCI": {
-        "latitud": 3.4567914151485253,
-        "longitud": -76.5330726030404,
+    "Polideportivo Los Almendros": {
+        "latitud": 3.4710467990599017,
+        "longitud": -76.49330558817636,
         "adyacentes": [
-            "UNICOC",
-            "Ecoparque Pisamos"
+            "Bulevar de Oriente",
+            "Bulevar del Río"
         ]
     },
-    "Centro Cultural del Banco de la República": {
-        "latitud": 3.450110346790639,
-        "longitud": -76.53559510304052,
+    "Unidad Deportiva Alberto Galindo": {
+        "latitud": 3.412247224167538,
+        "longitud": -76.5508290067407,
         "adyacentes": [
-            "Cámara de Comercio de Cali",
-            "Centro Cultural de Cali"
+            "Universidad del Valle",
+            "Instituto Humboldt"
         ]
     },
-    "Ecoparque Pisamos": {
-        "latitud": 3.441450666657592,
-        "longitud": -76.48172469162074,
+    "Bulevar de Oriente": {
+        "latitud": 3.4271549432353434,
+        "longitud": -76.48409539801399,
         "adyacentes": [
-            "Universidad ECCI",
-            "Biblioteca Departamental Jorge Garcés Borrero"
+            "Universidad del Valle",
+            "Polideportivo Los Almendros"
         ]
     },
     "Biblioteca Departamental Jorge Garcés Borrero": {
         "latitud": 3.436426530173853,
         "longitud": -76.53922341838341,
         "adyacentes": [
-            "Centro Cultural de Cali",
             "Instituto Humboldt",
-            "Ecoparque Pisamos"
+            "Bulevar del Río"
         ]
     },
     "Instituto Humboldt": {
         "latitud": 3.429120017986491,
         "longitud": -76.54139602023353,
         "adyacentes": [
-            "Biblioteca Departamental Jorge Garcés Borrero",
-            "Universidad del Valle"
+            "Unidad Deportiva Alberto Galindo",
+            "Biblioteca Departamental Jorge Garcés Borrero"
         ]
     }
 }
