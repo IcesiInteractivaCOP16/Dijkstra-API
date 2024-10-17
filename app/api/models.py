@@ -5,6 +5,3 @@ import heapq
 class PathRequest(BaseModel):
     source: str
     destination: str
-    
-    
-
