@@ -11,8 +11,7 @@ graph = {
         "latitud": 3.342076976663357,
         "longitud": -76.53063419139824,
         "adyacentes": [
-            "Universidad del Valle",
-            "Fundación Universitaria San Martín"
+            "Universidad del Valle"
         ]
     },
     "Bulevar del Río": {
@@ -20,7 +19,9 @@ graph = {
         "longitud": -76.5347951337262,
         "adyacentes": [
             "Biblioteca del Centenario",
-            "Biblioteca Departamental Jorge Garcés Borrero"
+            "Biblioteca Departamental Jorge Garcés Borrero",
+            "Polideportivo Los Almendros",
+            "Bulevar de Oriente"
         ]
     },
     "Universidad del Valle": {
@@ -28,14 +29,20 @@ graph = {
         "longitud": -76.52159697790536,
         "adyacentes": [
             "Universidad ICESI",
-            "Unidad Deportiva Alberto Galindo"
+            "Unidad Deportiva Alberto Galindo",
+            "Bulevar de Oriente",
+            "Fundación Universitaria San Martín"
         ]
     },
     "Fundación Universitaria San Martín": {
         "latitud": 3.418830555134766,
         "longitud": -76.53472029139806,
         "adyacentes": [
-            "Universidad ICESI",
+            "Unidad Deportiva Alberto Galindo",
+            "Biblioteca Departamental Jorge Garcés Borrero",
+            "Instituto Humboldt",
+            "Polideportivo Los Almendros",
+            "Bulevar de Oriente",
             "Universidad del Valle"
         ]
     },
@@ -52,7 +59,8 @@ graph = {
         "longitud": -76.49330558817636,
         "adyacentes": [
             "Bulevar de Oriente",
-            "Bulevar del Río"
+            "Bulevar del Río",
+            "Fundación Universitaria San Martín"
         ]
     },
     "Unidad Deportiva Alberto Galindo": {
@@ -60,6 +68,7 @@ graph = {
         "longitud": -76.5508290067407,
         "adyacentes": [
             "Universidad del Valle",
+            "Fundación Universitaria San Martín",
             "Instituto Humboldt"
         ]
     },
@@ -68,7 +77,9 @@ graph = {
         "longitud": -76.48409539801399,
         "adyacentes": [
             "Universidad del Valle",
-            "Polideportivo Los Almendros"
+            "Polideportivo Los Almendros",
+            "Bulevar del Río",
+            "Fundación Universitaria San Martín"
         ]
     },
     "Biblioteca Departamental Jorge Garcés Borrero": {
@@ -76,7 +87,9 @@ graph = {
         "longitud": -76.53922341838341,
         "adyacentes": [
             "Instituto Humboldt",
-            "Bulevar del Río"
+            "Bulevar del Río",
+            "Biblioteca del Centenario",
+            "Fundación Universitaria San Martín"
         ]
     },
     "Instituto Humboldt": {
@@ -84,7 +97,8 @@ graph = {
         "longitud": -76.54139602023353,
         "adyacentes": [
             "Unidad Deportiva Alberto Galindo",
-            "Biblioteca Departamental Jorge Garcés Borrero"
+            "Biblioteca Departamental Jorge Garcés Borrero",
+            "Fundación Universitaria San Martín"
         ]
     }
 }
